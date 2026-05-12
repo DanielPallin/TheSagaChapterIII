@@ -4,6 +4,8 @@ import IntroScreen from './components/IntroScreen';
 import Home from './pages/Home';
 import Lore from './pages/Lore';
 import Characters from './pages/Characters';
+import Vision from './pages/Vision';
+import Contact from './pages/Contact';
 
 export default function App() {
   const [hasEntered, setHasEntered] = useState(false);
@@ -44,8 +46,8 @@ export default function App() {
 
               <Route path="/lore" element={<Lore />} />
               <Route path="/characters" element={<Characters />} />
-              <Route path="/vision" element={<h2 className="text-4xl font-cinzel text-blood">Our Vision</h2>} />
-              <Route path="/contact" element={<h2 className="text-4xl font-cinzel text-blood">Contact</h2>} />
+              <Route path="/vision" element={<Vision />} />
+              <Route path="/contact" element={<Contact />} />
             </Routes>
           </main>
         </div>
