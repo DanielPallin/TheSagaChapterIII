@@ -2,6 +2,8 @@ import { useState, useRef } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import IntroScreen from './components/IntroScreen';
 import Home from './pages/Home';
+import Lore from './pages/Lore';
+import Characters from './pages/Characters';
 
 export default function App() {
   const [hasEntered, setHasEntered] = useState(false);
@@ -39,9 +41,9 @@ export default function App() {
             <Routes>
               {}
               <Route path="/" element={<Home />} />
-              
-              <Route path="/lore" element={<h2 className="text-4xl font-cinzel text-blood">The Lore</h2>} />
-              <Route path="/characters" element={<h2 className="text-4xl font-cinzel text-blood">Characters</h2>} />
+
+              <Route path="/lore" element={<Lore />} />
+              <Route path="/characters" element={<Characters />} />
               <Route path="/vision" element={<h2 className="text-4xl font-cinzel text-blood">Our Vision</h2>} />
               <Route path="/contact" element={<h2 className="text-4xl font-cinzel text-blood">Contact</h2>} />
             </Routes>
