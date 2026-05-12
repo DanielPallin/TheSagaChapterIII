@@ -19,7 +19,7 @@ export default function Lore() {
       transition={{ duration: 1 }}
       className="max-w-5xl mx-auto space-y-24 py-12"
     >
-      {/* KARTSEKTION */}
+      {/* world map */}
       <section className="space-y-6 text-center">
         <h1 className="text-4xl md:text-6xl font-cinzel text-blood uppercase tracking-widest">
           The Known World
@@ -41,7 +41,6 @@ export default function Lore() {
         </div>
       </section>
 
-      {/* DEL 1: MYTOLOGIN OCH DET DRÄNKTA HOVET (DIN KOD) */}
       <div className="grid md:grid-cols-2 gap-16 items-start">
         <article className="space-y-6">
           <h2 className="text-3xl font-cinzel text-parchment border-b border-blood/30 pb-2">
@@ -85,7 +84,6 @@ export default function Lore() {
         </article>
       </div>
 
-      {/* DEL 2: ÅTERUPPBYGGNADEN OCH NUTIDEN */}
       <div className="space-y-20 pt-12 border-t border-white/5">
         
         <FadeInSection>
@@ -163,7 +161,7 @@ export default function Lore() {
 
       </div>
 
-      {/* FOOTER-DEKORATION */}
+      {/* footer */}
       <div className="text-center opacity-30 font-cinzel tracking-[0.5em] text-sm pt-24 pb-12">
         VERITAS MANET — TRUTH REMAINS
       </div>

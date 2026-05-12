@@ -5,25 +5,23 @@ interface IntroScreenProps {
   isEntered: boolean;
 }
 
-// Vi lägger till 'size' i prop-definitionen
 const BloodDrop = ({ delay, duration, left, size }: { delay: number, duration: number, left: number, size: number }) => (
   <motion.div
     className="absolute top-[-50px] text-blood drop-shadow-[0_3px_5px_rgba(138,3,3,0.8)]"
-    style={{ left: `${left}%`, width: size, height: size * 1.5 }} // Gör dem något mer utdragna på höjden
+    style={{ left: `${left}%`, width: size, height: size * 1.5 }}
     initial={{ y: 0, opacity: 0, scaleY: 0.8 }}
     animate={{ 
       y: ['0vh', '100vh'],
       opacity: [0, 0.9, 0.9, 0],
-      scaleY: [0.8, 1.3, 0.9] // Skapar en dynamisk effekt där droppen dras ut av gravitationen
+      scaleY: [0.8, 1.3, 0.9]
     }}
     transition={{
       duration: duration,
-      ease: "easeIn", // Får dem att falla snabbare ju längre ner de kommer
+      ease: "easeIn",
       repeat: Infinity,
       delay: delay
     }}
   >
-    {/* En perfekt, organisk droppform via SVG */}
     <svg viewBox="0 0 24 24" fill="currentColor" className="w-full h-full">
       <path d="M12 2.694c-.463 0-1.077.295-1.636.85-2.023 2.003-7.364 8.243-7.364 12.355a9 9 0 0 0 18 0c0-4.112-5.34-10.352-7.364-12.355-.559-.554-1.173-.85-1.636-.85z" />
     </svg>

@@ -164,7 +164,7 @@ const CHARACTERS = [
     },
   ];
 
-// Kort-komponent med inbyggd scroll-animation
+// cards
 const CharacterCard = ({ character, index }: { character: typeof CHARACTERS[0], index: number }) => (
   <motion.article
     initial={{ opacity: 0, y: 50 }}
@@ -173,7 +173,7 @@ const CharacterCard = ({ character, index }: { character: typeof CHARACTERS[0], 
     transition={{ duration: 0.8, delay: index % 3 * 0.2 }} // Skapar en snygg domino-effekt per rad
     className="bg-abyss border border-blood/20 group relative overflow-hidden flex flex-col"
   >
-    {/* Bildbehållare med 1:1 aspect ratio för snyggt grid */}
+    {/* 1:1 AR */}
     <div className="relative aspect-square w-full overflow-hidden bg-black/50">
       <div className="absolute inset-0 flex items-center justify-center text-blood/20 font-cinzel text-sm -z-10">
         [ Visual Concept ]
@@ -181,15 +181,15 @@ const CharacterCard = ({ character, index }: { character: typeof CHARACTERS[0], 
       <img 
         src={character.image} 
         alt={`Concept art of ${character.name}`} 
-        loading="lazy" // KRITISKT för prestandan när du har 21 bilder!
+        loading="lazy" // many pics :D
         decoding="async"
         className="w-full h-full object-cover opacity-70 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-out"
       />
-      {/* Subtil blod-gradient i botten av bilden för att smälta in i texten */}
+      {}
       <div className="absolute inset-x-0 bottom-0 h-1/2 bg-linear-to-t from-abyss to-transparent" />
     </div>
 
-    {/* Textinnehåll */}
+    {/* text */}
     <div className="p-6 grow flex flex-col justify-start relative z-10 -mt-8">
       <span className="text-blood text-xs tracking-[0.3em] font-cinzel uppercase mb-1">
         {character.lineage}
@@ -218,14 +218,14 @@ export default function Characters() {
         </h1>
         <p className="text-lg text-parchment/80 leading-relaxed font-light">
           A visual exploration of the bloodlines, tyrants, and survivors that shape Zharuun. 
-          These conceptual manifestations represent the faces behind the lore.
+          These AI-generated conceptual manifestations represent the faces behind the lore.
         </p>
         <div className="flex justify-center pt-4" aria-hidden="true">
           <div className="w-24 h-px bg-linear-to-r from-transparent via-blood to-transparent opacity-60" />
         </div>
       </header>
 
-      {/* Grid för karaktärerna: 1 kolumn på mobil, 2 på tablet, 3 på desktop */}
+      {/* responsive */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {CHARACTERS.map((char, idx) => (
           <CharacterCard key={char.id} character={char} index={idx} />
