@@ -2,38 +2,57 @@ import { useState } from 'react';
 import { motion } from 'framer-motion';
 
 export default function Contact() {
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'loading' | 'success' | 'error'>('idle');
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setStatus('submitting');
-
-    const formData = new FormData(e.currentTarget);
     
-    // key
-    formData.append("access_key", "8d5ee08f-16a1-422d-a595-c741f26f01f9");
+    // Sparar referensen till formuläret direkt
+    const form = e.currentTarget; 
+    setStatus('loading');
+
+    // Gör objekt av all data
+    const formData = new FormData(form);
+    const object: Record<string, unknown> = {};
+    
+    formData.forEach((value, key) => {
+      object[key] = value;
+    });
+    
+    // Lägg till access_key
+    object.access_key = "8d5ee08f-16a1-422d-a595-c741f26f01f9";
+
+    const json = JSON.stringify(object);
 
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
-          'Accept': 'application/json'
+          "Content-Type": "application/json",
+          Accept: "application/json",
         },
-        body: formData,
+        body: json,
       });
 
-      const data = await response.json();
+      const result = await response.json();
 
-      if (data.success) {
+      if (result.success) {
         setStatus('success');
-        e.currentTarget.reset(); // Tömmer formuläret
+        form.reset(); // Tömmer formuläret
+        
+        // Återställ knappen till ursprungsläget
+        setTimeout(() => setStatus('idle'), 4000);
       } else {
-        console.error("Web3Forms Error:", data);
+        // Om API:et skickar tillbaka ett felmeddelande
+        console.log("Web3Forms fel:", result);
         setStatus('error');
+        setTimeout(() => setStatus('idle'), 4000);
       }
     } catch (error) {
-      console.error("Nätverksfel eller JSON-parse fel:", error);
+      // Om det blir nätverksfel eller liknande
+      console.error("Nätverksfel:", error);
       setStatus('error');
+      setTimeout(() => setStatus('idle'), 4000);
     }
   };
 
@@ -69,7 +88,7 @@ export default function Contact() {
         {/* status */}
         {status === 'success' && (
           <div className="bg-blood/20 border border-blood text-parchment p-4 text-center font-cinzel tracking-widest">
-            The raven has been dispatched. We will read your words in the shadows.
+            The raven has been dispatched. We will read your words as soon as possible.
           </div>
         )}
         
