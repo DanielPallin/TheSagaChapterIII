@@ -70,7 +70,7 @@ export default function Lore() {
           <div className="space-y-4 text-lg text-parchment/80 leading-relaxed font-light">
             <p>
               Hundreds of years have passed and history is fading. 
-              To the modern world, they are but myths—dismissed as the ramblings of madmen.
+              To the modern world, they are but myths-dismissed as the ramblings of madmen.
             </p>
             <p className="italic text-parchment/90">
               "Scholars and mystics whisper about the Drowned Court" <br/>
@@ -148,7 +148,7 @@ export default function Lore() {
                 exports through the Goldvein Consortium. To the south, the oceans conceal the mysteries of the Pearl of Atlantara.
               </p>
               <p>
-                To maintain their iron grip, the Rothmaidens have commissioned their Blood Architect, Serken, to breed the <strong>Scaleborn</strong>—a genetic servant race designed for obedience, labor, and war.
+                To maintain their iron grip, the Rothmaidens have commissioned their Blood Architect, Serken, to breed the <strong>Scaleborn</strong>-a genetic servant race designed for obedience, labor, and war.
               </p>
               <p className="italic text-parchment pt-4 border-t border-white/10 mt-4">
                 You enter this world not as a chosen hero, but as an ordinary soul: a miner, a scholar, a refugee. 
