@@ -177,11 +177,11 @@ const CHARACTERS = [
       image: "/images/Talon.png"
     },
     {
-      id: "aelindra",
-      name: "Aelindra",
+      id: "eily",
+      name: "Eily",
       lineage: "House Drunveil",
       description: "Grand daughter of Talon Drunveil.",
-      image: "/images/Aelindra.png"
+      image: "/images/Eily.png"
     },
     {
       id: "selvor",
