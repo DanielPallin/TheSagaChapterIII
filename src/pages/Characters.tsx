@@ -103,10 +103,24 @@ const CHARACTERS = [
   
     // --- HOUSE QASMET ---
     {
+      id: "rathuun",
+      name: "Rathuun",
+      lineage: "House Qasmet",
+      description: "Blinded by pride and wounded by rejection, Rathuun killed his own wife, blaming her blood for their son’s defiance. Her death marked the turning point of the dynasty’s rulership.",
+      image: "/images/Rathuun.png"
+    },
+    {
+      id: "ishra",
+      name: "Ishra",
+      lineage: "Seraphate Viziers",
+      description: "Ishra serves as the oracle of the Seraphate Viziers. Her age and wisdom is superior to the Empress herself, and she is said to have been a guiding hand in the rise of Meziras power.",
+      image: "/images/Ishra.png"
+    },
+    {
       id: "mezira",
       name: "Empress Mezira",
       lineage: "House Qasmet",
-      description: "Only sixteen, she was crowned Empress of Sesmet. Bound in secret oaths to the Seraphate Viziers, she wove her influence quietly through the palace corridors.",
+      description: "Only sixteen, she was crowned Empress of Sesmet after the death of Rathuuns wife. Bound in secret oaths to the Seraphate Viziers, she wove her influence quietly through the palace corridors.",
       image: "/images/Mezira-Qasmet.png"
     },
     {
@@ -154,6 +168,41 @@ const CHARACTERS = [
       lineage: "House Drunveil",
       description: "One of the rare Dryadborn. He is a druid born of both flesh and forest, whose veins carry the pulse of nature itself.",
       image: "/images/Cernarion-the-Dryadborn.png"
+    },
+    {
+      id: "talon",
+      name: "Talon",
+      lineage: "House Drunveil",
+      description: "Elder of the druids.",
+      image: "/images/Talon.png"
+    },
+    {
+      id: "aelindra",
+      name: "Aelindra",
+      lineage: "House Drunveil",
+      description: "Grand daughter of Talon Drunveil.",
+      image: "/images/Aelindra.png"
+    },
+    {
+      id: "selvor",
+      name: "Selvor",
+      lineage: "House Elarion",
+      description: "The ruler of the elven city.",
+      image: "/images/Selvor.png"
+    },
+    {
+      id: "aethen",
+      name: "Aethen",
+      lineage: "House Elarion",
+      description: "One of three sons of Selvor and Elathra.",
+      image: "/images/Aethen.png"
+    },
+    {
+      id: "elfie",
+      name: "Elfie",
+      lineage: "House Elarion",
+      description: "Princess Elfie is the youngest daughter of Selvor and Elathra.",
+      image: "/images/Elfie.png"
     },
     {
       id: "sb-23",
